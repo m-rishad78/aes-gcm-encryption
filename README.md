@@ -49,13 +49,13 @@ This script allows you to protect any file using a strong password-based encrypt
 ## 1️⃣ Clone the repository
 
  ```bash
- git clone https://github.com/m-rishad78/AES-GCM-File-Encryption.git
+ git clone https://github.com/m-rishad78/aes-gcm-encryption.git
  ```
 
 ## 2️⃣ Navigate to the Project Directory
 
  ```bash
- cd AES-GCM-File-Encryption
+ cd aes-gcm-encryption
  ```
 
 ## ▶️ Usage
