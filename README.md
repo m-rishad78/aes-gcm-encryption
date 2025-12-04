@@ -19,7 +19,7 @@ This script allows you to protect any file using a strong password-based encrypt
 ## 📂 Project Structure
 
 ```perl
-📁 AES-GCM-File-Encryption
+📁 aes-gcm-encryption
  ├── aes_cipher.py
  └── README.md
  ```
