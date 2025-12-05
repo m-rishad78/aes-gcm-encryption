@@ -108,3 +108,7 @@
 ## ⭐ Contribute
 
  Feel free to open issues or submit pull requests to improve the project!
+
+## 📜 License
+
+ This project is licensed under the **MIT License**.
