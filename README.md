@@ -17,9 +17,21 @@
      - Modified or corrupted encrypted file
  - Simple interactive **CLI** interface
 
+## 🧠 How it works
+
+ - **16-byte Salt** is generated
+ - PBKDF2 derives a **32-byte AES-256 key**.
+ - A **12-byte Nonce** is created for AES-GCM
+ - AES-GCM Encrypts the file and produces a **16-byte Auth Tag**
+ - Output file format:
+
+ ```text
+ [Salt][Nonce][Tag][Encrypted_Data]
+ ```
+
 ## 📂 Project Structure
 
-```perl
+```tree
 📁 aes-gcm-encryption
  ├── aes_cipher.py
  └── README.md
@@ -31,18 +43,6 @@
 
  ```bash
  pip install pycryptodome zxcvbn
- ```
-
-## 🧠 How it works
-
- - **16-byte Salt** is generated
- - PBKDF2 derives a **32-byte AES-256 key**.
- - A **12-byte Nonce** is created for AES-GCM
- - AES-GCM Encrypts the file and produces a **16-byte Auth Tag**
- - Output file format:
-
- ```css
- [Salt][Nonce][Tag][Encrypted_Data]
  ```
 
  This format contains everything needed for secure decryption.
@@ -69,14 +69,14 @@
 
  Then choose an option:
 
- ```css
+ ```text
     1. Encryption
     2. Decryption
  ```
 
 ## 🔑 Encryption Example
 
- ```css
+ ```text
  Enter the Filename: secret.txt
  Enter the Password: ******
  
@@ -88,7 +88,7 @@
 
 ## 🔓 Decryption Example
 
- ```css
+ ```text
  Enter the Filename: secret.txt.enc
  Enter the Password: ******
 
