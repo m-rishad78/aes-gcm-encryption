@@ -4,7 +4,7 @@ from Crypto.Random import get_random_bytes
 
 from getpass import getpass
 from os import path
-
+from zxcvbn import zxcvbn
 
 class AESCipher:
     def derive_key(self, password: str, salt: bytes) -> bytes:
@@ -60,6 +60,35 @@ class AESCipher:
         else:
             print("\nFile Has been Successfully Decrypted.")
 
+    def get_password(self) -> str | None:
+        try:
+            while True:
+                password: str = getpass("Enter the Password: ")
+                result: dict = zxcvbn(password=password)
+                score: int = result.get("score", 0)
+
+                response: str = ""
+
+                if score >= 3:
+                    return password
+
+                feedback: dict = result.get("feedback", {})
+                warning: str = feedback.get("warning", "")
+                suggestions: list = feedback.get("suggestions", [])
+
+                response += "\nWeak Password!"
+                response += "\nWarning: {}".format(warning)
+                response += "\nSuggestions: {}\n".format(", ".join(suggestions))
+
+                print(response)
+
+        except KeyboardInterrupt:
+            return None
+
+        except Exception as error:
+            print(f"Error: {str(error)}")
+            return None
+
     def main(self) -> None:
         try:
             print("\n\t1. Encryption\n\t2. Decryption")
@@ -71,7 +100,7 @@ class AESCipher:
                 print("File doesn't Exists.")
                 return
 
-            password: str = getpass("Enter the Password: ")
+            password: str = self.get_password()
 
             match (option):
                 case 1:

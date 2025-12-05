@@ -1,8 +1,8 @@
 # 🔐 AES File Encryption & Decryption (Python)
 
-A simple & secure file encryption/decrytion tool built using **AES-256 (GCM Mode)** & **PBKDF2** key derivation.
-
-This script allows you to protect any file using a strong password-based encryption system.
+ A simple & secure file encryption/decryption tool built using **AES-256 (GCM Mode)** & **PBKDF2** key derivation.
+ 
+ This script allows you to protect any file using a strong password-based encryption system.
 
 ## 🚀 Features
 
@@ -11,6 +11,7 @@ This script allows you to protect any file using a strong password-based encrypt
  - **Random salt & nonce** for every encryption
  - **Authentication tag** for tamper detection
  - **Password hidden** using getpass()
+ - Password strength checking [`zxcvbn`] 
  - Protects against:
      - Wrong password
      - Modified or corrupted encrypted file
@@ -19,7 +20,7 @@ This script allows you to protect any file using a strong password-based encrypt
 ## 📂 Project Structure
 
 ```perl
-📁 AES-GCM-File-Encryption
+📁 aes-gcm-encryption
  ├── aes_cipher.py
  └── README.md
  ```
@@ -29,7 +30,7 @@ This script allows you to protect any file using a strong password-based encrypt
  Install dependencies via pip:
 
  ```bash
- pip install pycryptodome
+ pip install pycryptodome zxcvbn
  ```
 
 ## 🧠 How it works
@@ -49,13 +50,13 @@ This script allows you to protect any file using a strong password-based encrypt
 ## 1️⃣ Clone the repository
 
  ```bash
- git clone https://github.com/m-rishad78/AES-GCM-File-Encryption.git
+ git clone https://github.com/m-rishad78/aes-gcm-encryption.git
  ```
 
 ## 2️⃣ Navigate to the Project Directory
 
  ```bash
- cd AES-GCM-File-Encryption
+ cd aes-gcm-encryption
  ```
 
 ## ▶️ Usage
@@ -101,9 +102,13 @@ This script allows you to protect any file using a strong password-based encrypt
 
  - Use **strong passwords** for better protection
  - Never share the **encrypted file & password together**
- - Thia project is for **learning & personal use**, not enterprise-level security
- - AES-GCM ensures both **confidentiality & integrity**, but password strength still mstters
+ - This project is for **learning & personal use**, not enterprise-level security
+ - AES-GCM ensures both **confidentiality & integrity**, but password strength still matters
 
 ## ⭐ Contribute
 
  Feel free to open issues or submit pull requests to improve the project!
+
+## 📜 License
+
+ This project is licensed under the **MIT License**.
